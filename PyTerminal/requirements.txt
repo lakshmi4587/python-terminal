@@ -2,3 +2,4 @@ websockets
 pyreadline
 flask
 psutil
+prompt_toolkit
