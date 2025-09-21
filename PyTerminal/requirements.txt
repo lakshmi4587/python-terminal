@@ -1,0 +1,4 @@
+websockets
+pyreadline
+flask
+psutil
