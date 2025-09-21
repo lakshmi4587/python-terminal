@@ -182,8 +182,11 @@ async def ws_handler(websocket):
 # Start WebSocket server
 # ------------------------------
 async def main():
-    async with websockets.serve(ws_handler, "localhost", 8000):
-        print("WebSocket server running at ws://localhost:8000")
+    # async with websockets.serve(ws_handler, "localhost", 8000):
+    #     print("WebSocket server running at ws://localhost:8000")
+    port = int(os.environ.get("PORT", 8000))
+    async with websockets.serve(ws_handler, "0.0.0.0", port):
+        print(f"WebSocket server running at ws://0.0.0.0:{port}")
         await asyncio.Future()
 
 if __name__ == "__main__":
